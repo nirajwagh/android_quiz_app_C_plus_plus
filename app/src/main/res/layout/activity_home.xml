@@ -88,15 +88,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -137,15 +128,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -186,15 +168,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -234,15 +207,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -268,6 +232,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#28A2CF"
+                android:gravity="center"
                 android:orientation="vertical"
                 android:paddingStart="7dp"
                 android:paddingTop="5dp"
@@ -286,15 +251,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -335,15 +291,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -385,15 +332,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -434,15 +372,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -453,6 +382,7 @@
             android:layout_height="125dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
             android:tag="Arrays"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
@@ -484,15 +414,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
@@ -505,6 +426,7 @@
             android:layout_marginTop="30dp"
 
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="15dp"
             android:tag="Data Structures"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
@@ -535,15 +457,6 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:fontFamily="@font/baloo"
-                    android:gravity="center"
-                    android:text="20/50"
-                    android:textColor="#FFF"
-                    android:textSize="11sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 

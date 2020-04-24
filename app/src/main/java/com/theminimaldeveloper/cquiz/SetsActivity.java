@@ -21,7 +21,7 @@ public class SetsActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private int[] setsScores, setsQueAttempted;
-    int i, chapterNo;
+    int i, chapterNo, chapterSetsCount;
     private RecyclerView recycler;
     private TextView txt_chapter_title;
 
@@ -39,7 +39,7 @@ public class SetsActivity extends AppCompatActivity {
 
         txt_chapter_title.setText(chapter);
 
-        final int chapterSetsCount=setsCounts[chapterNo-1];
+        chapterSetsCount=setsCounts[chapterNo-1];
 
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -50,12 +50,7 @@ public class SetsActivity extends AppCompatActivity {
         editor=sharedPreferences.edit();
 
 
-        for(i=0; i<chapterSetsCount; i++){
-            setsScores[i]=sharedPreferences.getInt(chapter+"set"+i+"score", 0);
-            setsQueAttempted[i]=sharedPreferences.getInt(chapter+"set"+i+"attempted", 0);
-        }
 
-        recycler.setAdapter(new SetsAdapter(setsScores, setsQueAttempted, getApplicationContext(), chapter));
 
 
 
@@ -63,5 +58,19 @@ public class SetsActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+        for(i=0; i<chapterSetsCount; i++){
+            setsScores[i]=sharedPreferences.getInt(chapter+"set"+(i+1)+"score", 0);
+            setsQueAttempted[i]=sharedPreferences.getInt(chapter+"set"+(i+1)+"attempted", 0);
+        }
+
+        recycler.setAdapter(new SetsAdapter(setsScores, setsQueAttempted, getApplicationContext(), chapter));
+    }
+
+    public void goBack(View view) {
+        finish();
+    }
 }

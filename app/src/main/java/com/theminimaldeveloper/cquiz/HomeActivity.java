@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private ConstraintLayout layout;
-    private int i;
+    private int i, totalScore, totalQuesAttempt;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private TextView txt_total_score;
@@ -29,16 +29,11 @@ public class HomeActivity extends AppCompatActivity {
         txt_total_score=findViewById(R.id.txt_total_score);
 
         sharedPreferences=getSharedPreferences("scoresFile", MODE_PRIVATE);
-        editor=sharedPreferences.edit();
-
-        final String scoreText=sharedPreferences.getInt("toatlScore",0) + "/" + sharedPreferences.getInt("totalAttempted", 0);
-        txt_total_score.setText(scoreText);
-        
 
         for(i=1;i<=10; i++){
             View view=layout.getChildAt(i);
             final int chapterNo=i;
-            Log.d("taggg", view.getTag().toString());
+
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -53,5 +48,16 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        totalScore=sharedPreferences.getInt("totalScore",0) ;
+        totalQuesAttempt=sharedPreferences.getInt("totalQuesAttempt",0) ;
+
+        String scoreDetails=totalScore+"/"+totalQuesAttempt;
+        txt_total_score.setText(scoreDetails);
     }
 }
