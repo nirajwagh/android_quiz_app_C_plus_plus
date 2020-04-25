@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_weight="3"
-            android:fontFamily="@font/fredoka_one"
+            android:fontFamily="@font/aa"
             android:text="Set 1"
             android:textColor="#FFF"
             android:textSize="15sp" />
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_weight="1"
-            android:fontFamily="@font/fredoka_one"
+            android:fontFamily="@font/aa"
             android:gravity="right"
             android:text="Score: 12/25"
             android:textColor="#FFF"

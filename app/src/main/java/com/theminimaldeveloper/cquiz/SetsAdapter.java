@@ -1,6 +1,9 @@
 package com.theminimaldeveloper.cquiz;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,10 +48,13 @@ public class SetsAdapter extends RecyclerView.Adapter<SetsAdapter.myViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, QuestionsActivity.class);
-                intent.putExtra("setDetails", chapter+"set"+(position+1));
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+
+                    Toast.makeText(context, position+"", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(context, QuestionsActivity.class);
+                    intent.putExtra("setDetails", chapter+"set"+(position+1));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+
             }
         });
     }

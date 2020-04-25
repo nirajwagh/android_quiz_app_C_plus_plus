@@ -1,7 +1,9 @@
 package com.theminimaldeveloper.cquiz;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -17,8 +19,9 @@ import java.util.List;
 
 public class QuestionsActivity extends AppCompatActivity {
 
-    private int quesAttempted, totalQues, setScore, totalScore, totalQuesAttempt;
-    private TextView txt_question, txt_optionA, txt_optionB, txt_optionC, txt_optionD, txt_que_count, txt_score, txt_correct, txt_wrong;
+    private int quesAttempted, totalQues=25, setScore, totalScore, totalQuesAttempt;
+    private TextView txt_question, txt_optionA, txt_optionB, txt_optionC, txt_optionD,
+            txt_que_count, txt_score, txt_correct, txt_wrong, txt_set_completed;
     private Button btn_next;
     private ArrayList<QuestionModel> arrayList=new ArrayList();
     private SharedPreferences sharedPreferences;
@@ -43,6 +46,7 @@ public class QuestionsActivity extends AppCompatActivity {
         txt_score=findViewById(R.id.txt_score);
         txt_correct=findViewById(R.id.txt_correct);
         txt_wrong=findViewById(R.id.txt_wrong);
+        txt_set_completed=findViewById(R.id.txt_set_completed);
         btn_next=findViewById(R.id.btn_next);
         btn_next.setVisibility(View.INVISIBLE);
 
@@ -61,7 +65,6 @@ public class QuestionsActivity extends AppCompatActivity {
         databaseHelper helper=new databaseHelper(this);
         Cursor cursor=helper.getSetQuestions(setDetails);
 
-
         do{
             arrayList.add(new QuestionModel(cursor.getString(0),
                     cursor.getString(1),
@@ -71,9 +74,31 @@ public class QuestionsActivity extends AppCompatActivity {
                     cursor.getString(5)));
         }while (cursor.moveToNext());
 
-        totalQues=arrayList.size();
 
-        setQuestion();
+        if(quesAttempted==25){
+            AlertDialog builder=new AlertDialog.Builder(this)
+                    .setTitle("Set is Completed")
+                    .setMessage("Your set score: "+setScore+" / 25")
+                    .setCancelable(false)
+                    .setPositiveButton("Restart", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                            restartQuizSet(null);
+                        }
+                    })
+                    .setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    })
+                    .show();
+        }else{
+            setQuestion();
+        }
+
+
 
 
     }
@@ -128,10 +153,8 @@ public class QuestionsActivity extends AppCompatActivity {
         String selectedAnswer=selectedView.getTag().toString();
         String correctAnswer=arrayList.get(quesAttempted).getAnswerKey();
         String answerViewId= "txt_option"+correctAnswer;
-        btn_next.setVisibility(View.VISIBLE);
+
         int answerViewIdInt=getResources().getIdentifier(answerViewId, "id", getPackageName());
-
-
         answerView = findViewById(answerViewIdInt);
         answerView.setBackground(getDrawable(R.drawable.ans_correct_layout));
         if(selectedAnswer.equals(correctAnswer)){
@@ -154,9 +177,16 @@ public class QuestionsActivity extends AppCompatActivity {
         editor.putInt("totalQuesAttempt", totalQuesAttempt);
         editor.apply();
 
+        if(quesAttempted==totalQues){
+            txt_set_completed.setVisibility(View.VISIBLE);
+        }else{
+            btn_next.setVisibility(View.VISIBLE);
+        }
+
     }
 
     public void restartQuizSet(View view) {
+        txt_set_completed.setVisibility(View.INVISIBLE);
         totalQuesAttempt-=quesAttempted;
         totalScore-=setScore;
 
