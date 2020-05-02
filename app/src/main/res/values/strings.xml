@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">C++ Quiz</string>
+    <string name="quit">Quit</string>
+    <string name="wrong">Wrong</string>
+    <string name="restart">Restart</string>
+    <string name="set_completed">Set Completed</string>
+    <string name="correct">Correct</string>
+    <string name="next">Next</string>
+    <string name="back_button">Back Button</string>
+    <string name="c_quiz">C++ Quiz</string>
+    <string name="l_o_a_d_i_n_g">L O A D I N G</string>
+    <string name="the_minimal_developer">The Minimal Developer</string>
+
+
 </resources>

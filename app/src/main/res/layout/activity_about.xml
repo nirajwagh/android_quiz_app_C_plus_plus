@@ -34,7 +34,7 @@
             android:layout_margin="20dp"
             android:fontFamily="@font/dd"
             android:gravity="center"
-            android:text="&quot;C++ Quiz&quot; Android app by &quot;The Minimal Developer&quot; is an open-sourced application for playing quiz offline. \n\nThis application has around 1k questions on C++ programming language organized chapter wise. \n\nUsers can get the source code from the link provided in the slider navigation bar. \n\n\nPrivacy Policy: \nThis app does not connect to the Internet and does not collect or store any user's data. \n\nLiscences: \nSpash Animation: Lottiefiles-splashanimation "
+            android:text="&quot;C++ Quiz&quot; Android app by &quot;The Minimal Developer&quot; is an open-sourced application for playing quiz offline. \n\nThis application has 500+ questions on C++ programming language organized chapter wise. \n\nUsers can get the source code of the app from the link provided in the slider navigation bar. \n\nPrivacy Policy: \nThis app does not connect to the Internet and does not collect or store any user's data. \n\nGithub Libraries Used: \nandroid-sqlite-asset-helper \nlottie-android \n\nLiscences: \nSpash Animation: Lottiefiles-splashanimation "
             android:textColor="#000"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

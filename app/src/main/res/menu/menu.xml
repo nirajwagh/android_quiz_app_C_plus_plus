@@ -27,5 +27,15 @@
             android:title="Github"
 
             />
+
+        <item android:id="@+id/rate"
+            android:title="Rate App"
+
+            />
+
+        <item android:id="@+id/feedback"
+            android:title="Feedback"
+
+            />
     </group>
 </menu>

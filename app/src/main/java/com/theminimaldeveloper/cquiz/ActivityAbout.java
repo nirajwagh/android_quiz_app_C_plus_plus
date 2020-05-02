@@ -1,7 +1,6 @@
 package com.theminimaldeveloper.cquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,8 +12,8 @@ public class ActivityAbout extends AppCompatActivity {
         setContentView(R.layout.activity_about);
     }
 
+    //Function for the back image
     public void backButtonPressed(View view) {
-
         finish();
     }
 }

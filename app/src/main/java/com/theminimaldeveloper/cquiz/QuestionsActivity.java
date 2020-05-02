@@ -1,21 +1,17 @@
 package com.theminimaldeveloper.cquiz;
 
+//Activity for setting the questions accessed from the database.
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class QuestionsActivity extends AppCompatActivity {
 
@@ -24,12 +20,9 @@ public class QuestionsActivity extends AppCompatActivity {
             txt_que_count, txt_score, txt_correct, txt_wrong, txt_set_completed;
     private Button btn_next;
     private ArrayList<QuestionModel> arrayList=new ArrayList();
-    private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private View answerView, selectedView;
     private String setDetails;
-
-
 
 
     @Override
@@ -51,20 +44,20 @@ public class QuestionsActivity extends AppCompatActivity {
         btn_next.setVisibility(View.INVISIBLE);
 
         setDetails=getIntent().getStringExtra("setDetails");
+        SharedPreferences sharedPreferences = getSharedPreferences("scoresFile", MODE_PRIVATE);
+        editor= sharedPreferences.edit();
 
-        sharedPreferences=getSharedPreferences("scoresFile", MODE_PRIVATE);
-        editor=sharedPreferences.edit();
+        //accessing the scores and attempted questions data from the shared preference file.
+        setScore= sharedPreferences.getInt(setDetails+"score", 0);
+        quesAttempted= sharedPreferences.getInt(setDetails+"attempted", 0);
+        totalScore= sharedPreferences.getInt("totalScore", 0);
+        totalQuesAttempt= sharedPreferences.getInt("totalQuesAttempt", 0);
 
-        setScore=sharedPreferences.getInt(setDetails+"score", 0);
-        quesAttempted=sharedPreferences.getInt(setDetails+"attempted", 0);
-        totalScore=sharedPreferences.getInt("totalScore", 0);
-        totalQuesAttempt=sharedPreferences.getInt("totalQuesAttempt", 0);
-
-
-
+        //calling the database helper class for obtaining the questions using cursor.
         databaseHelper helper=new databaseHelper(this);
         Cursor cursor=helper.getSetQuestions(setDetails);
 
+        //do-while loop for adding questions to an array list.
         do{
             arrayList.add(new QuestionModel(cursor.getString(0),
                     cursor.getString(1),
@@ -74,7 +67,7 @@ public class QuestionsActivity extends AppCompatActivity {
                     cursor.getString(5)));
         }while (cursor.moveToNext());
 
-
+        //showing dialog if the set is already completed
         if(quesAttempted==25){
             AlertDialog builder=new AlertDialog.Builder(this)
                     .setTitle("Set is Completed")
@@ -95,18 +88,12 @@ public class QuestionsActivity extends AppCompatActivity {
                     })
                     .show();
         }else{
+            //setting the question for first time
             setQuestion();
         }
-
-
-
-
     }
 
-    public void setListenerForAnswer(){
-
-    }
-
+    //method for setting the question and the score in text fields
     public void setQuestion(){
         txt_question.setText(arrayList.get(quesAttempted).getQuestion());
         txt_optionA.setText(arrayList.get(quesAttempted).getOptionA());
@@ -137,8 +124,6 @@ public class QuestionsActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         setQuestion();
     }
 
@@ -162,7 +147,6 @@ public class QuestionsActivity extends AppCompatActivity {
             setScore++;
             totalScore++;
             txt_score.setText("Score: "+setScore);
-
             editor.putInt(setDetails+"score",+setScore);
             editor.putInt("totalScore",+totalScore);
             editor.apply();
@@ -189,7 +173,6 @@ public class QuestionsActivity extends AppCompatActivity {
         txt_set_completed.setVisibility(View.INVISIBLE);
         totalQuesAttempt-=quesAttempted;
         totalScore-=setScore;
-
         quesAttempted=0;
         setScore=0;
         editor.putInt(setDetails+"attempted", quesAttempted);
@@ -198,7 +181,5 @@ public class QuestionsActivity extends AppCompatActivity {
         editor.putInt("totalScore",+totalScore);
         editor.apply();
         btnNextQuestion(view);
-
-
     }
 }

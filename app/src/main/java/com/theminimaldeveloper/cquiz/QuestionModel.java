@@ -2,7 +2,7 @@ package com.theminimaldeveloper.cquiz;
 
 public class QuestionModel {
 
-    String question, optionA, optionB, optionC, optionD, answerKey;
+    private String question, optionA, optionB, optionC, optionD, answerKey;
 
     public QuestionModel(String question, String optionA, String optionB, String optionC, String optionD, String answerKey) {
         this.question = question;
