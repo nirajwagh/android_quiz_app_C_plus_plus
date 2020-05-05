@@ -10,7 +10,7 @@ It is a completely offline app and does not collect any user data.
 
 Demo On Youtube: Will be uploaded after app is reviewed by google.
 
-Play Store Link: Will be uploaded after app is reviewed by google.
+Play Store Link: https://play.google.com/store/apps/details?id=com.theminimaldeveloper.cquiz
 
 Download apk: https://github.com/nirajwagh/android_quiz_app_C_plus_plus/raw/master/Apk%20download/C%2B%2B%20Quiz.apk
 
