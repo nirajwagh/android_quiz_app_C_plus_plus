@@ -8,7 +8,7 @@ The current release of the app contains 500+ questions and more questions will b
 
 It is a completely offline app and does not collect any user data.
 
-Demo On Youtube: Will be uploaded after app is reviewed by google.
+Demo On Youtube: https://www.youtube.com/watch?v=CSBTuV4OJSE
 
 Play Store Link: https://play.google.com/store/apps/details?id=com.theminimaldeveloper.cquiz
 
