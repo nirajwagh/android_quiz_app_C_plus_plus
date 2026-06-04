@@ -1,48 +1,57 @@
-# android_quiz_app_C_plus_plus
+# C++ Quiz Android App
 
-A very minimal, ad-free and offline app for playing quiz on C++ programming language.
+A minimal, **ad-free**, and **fully offline Android app** for practicing and testing **C++ programming concepts** through quizzes.
 
-The quiz is divided into multiple chapters and each chapter is divided into sets. Each set contains 25 questions. 
+The quiz is organized into **multiple chapters**, and each chapter contains **multiple question sets**. Every set includes **25 questions** designed to help learners improve their understanding of C++ programming.
 
-The current release of the app contains 500+ questions and more questions will be added in the subsequent releases.
+The current version includes **500+ C++ questions**, with support for adding more content in future releases.
 
-It is a completely offline app and does not collect any user data.
+## Features
 
-## Youtube Demo
+* 500+ C++ quiz questions
+* Chapter-wise quiz organization
+* Multiple quiz sets per chapter
+* Lightweight and minimal UI
+* Fully offline
+* No ads
+* No user data collection
 
-Demo On Youtube: https://www.youtube.com/watch?v=CSBTuV4OJSE
-
-## Play Store
-
-Play Store Link: https://play.google.com/store/apps/details?id=com.theminimaldeveloper.cquiz
-
-## Download APK
+## Download
 
 **[Download APK](https://github.com/nirajwagh/android_quiz_app_C_plus_plus/releases/latest)**
 
-## Screenshots:
+If Android blocks installation, enable **Install Unknown Apps** for your browser or file manager.
 
-Splash activity:
+## Play Store
 
-![Splash activity](https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/1.png)
+**[View on Google Play](https://play.google.com/store/apps/details?id=com.theminimaldeveloper.cquiz)**
 
+## YouTube Demo
 
-Home activity:
+**[Watch Demo Video](https://www.youtube.com/watch?v=CSBTuV4OJSE)**
 
-![Home activity](https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/2.png)
+## Screenshots
 
+### Splash Screen
 
-Chapter sets activity:
+<img src="https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/1.png" width="250"/>
 
-![Chapter sets activity](https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/4.png)
+### Home Screen
 
+<img src="https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/2.png" width="250"/>
 
-Questions activity:
+### Chapter Sets
 
-![Questions activity](https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/5.png)
+<img src="https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/4.png" width="250"/>
 
+### Questions Screen
 
-Wrong answer:
+<img src="https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/5.png" width="250"/>
 
-![Wrong answer](https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/6.png)
+### Wrong Answer Feedback
 
+<img src="https://github.com/nirajwagh/android_quiz_app_C_plus_plus/blob/master/Screenshots/6.png" width="250"/>
+
+## Privacy
+
+This app is **fully offline** and does **not collect, store, or share any user data**.
