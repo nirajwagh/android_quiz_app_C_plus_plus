@@ -57,65 +57,54 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent intent;
                 Uri uri;
-                switch (item.getItemId()){
-                    case R.id.about:
-                        //intent for opening the about activity.
-                            intent=new Intent(HomeActivity.this, ActivityAbout.class);
-                            startActivity(intent);
-                        break;
+                if (item.getItemId() == R.id.about) {
+                    intent = new Intent(HomeActivity.this, ActivityAbout.class);
+                    startActivity(intent);
 
-                    case R.id.source_code:
-                        //intent for opening source code page on Github
-                            uri=Uri.parse("https://github.com/nirajwagh/android_quiz_app_C_plus_plus?files=1");
-                            intent=new Intent(Intent.ACTION_VIEW, uri);
-                            startActivity(intent);
-                        break;
+                } else if (item.getItemId() == R.id.source_code) {
+                    uri = Uri.parse("https://github.com/nirajwagh/android_quiz_app_C_plus_plus?files=1");
+                    intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
 
-                    case R.id.other_apps:
-                        //intent for opening play store profile
-                            uri=Uri.parse("https://play.google.com/store/apps/developer?id=The+Minimal+Developer");
-                            intent=new Intent(Intent.ACTION_VIEW, uri);
-                            startActivity(intent);
-                        break;
+                } else if (item.getItemId() == R.id.other_apps) {
+                    uri = Uri.parse("https://play.google.com/store/apps/developer?id=The+Minimal+Developer");
+                    intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
 
-                    case R.id.youtube_channel:
-                        //intent for opening youtube channel.
-                            uri=Uri.parse("https://www.youtube.com/channel/UCG_1skZUBvz0MOjEe05TECQ/featured");
-                            intent=new Intent(Intent.ACTION_VIEW, uri);
-                            startActivity(intent);
-                        break;
+                } else if (item.getItemId() == R.id.youtube_channel) {
+                    uri = Uri.parse("https://www.youtube.com/channel/UCG_1skZUBvz0MOjEe05TECQ/featured");
+                    intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
 
-                    case R.id.github:
-                        //intent for opening github profile
-                            uri=Uri.parse("https://github.com/nirajwagh");
-                            intent=new Intent(Intent.ACTION_VIEW, uri);
-                            startActivity(intent);
-                        break;
+                } else if (item.getItemId() == R.id.github) {
+                    uri = Uri.parse("https://github.com/nirajwagh");
+                    intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
 
-                    case R.id.rate:
-                        //intent for opening play store app page for rating and review.
-                        uri=Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName());
-                        intent=new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(intent);
-                        break;
+                } else if (item.getItemId() == R.id.rate) {
+                    uri = Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName());
+                    intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
 
-                    case R.id.feedback:
-                        //intent for opening the email client for sending feedback.
-                        String[] TO = {"theminimaldeveloper@gmail.com"};
-                        Intent emailIntent=new Intent(Intent.ACTION_SEND);
-                        emailIntent.setData(Uri.parse("mailto:"));
-                        emailIntent.setType("text/plain");
-                        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "C++ Quiz App Feedback");
-                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Thanks for taking the time for writing feedback. \nYou can write your feedback below:\n");
-                        try {
-                            startActivity(Intent.createChooser(emailIntent, "Send email..."));
-                            finish();
-                        }catch (android.content.ActivityNotFoundException ex){
-                            Toast.makeText(HomeActivity.this,
-                                    "There is no email client installed.", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
+                } else if (item.getItemId() == R.id.feedback) {
+                    String[] TO = {"theminimaldeveloper@gmail.com"};
+
+                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                    emailIntent.setData(Uri.parse("mailto:"));
+                    emailIntent.setType("text/plain");
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "C++ Quiz App Feedback");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT,
+                            "Thanks for taking the time for writing feedback. \nYou can write your feedback below:\n");
+
+                    try {
+                        startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                        finish();
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(HomeActivity.this,
+                                "There is no email client installed.",
+                                Toast.LENGTH_SHORT).show();
+                    }
                 }
                 return false;
             }
